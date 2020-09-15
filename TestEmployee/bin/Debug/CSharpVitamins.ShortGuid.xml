@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CSharpVitamins.ShortGuid</name>
+    </assembly>
+    <members>
+        <member name="T:CSharpVitamins.ShortGuid">
+            <summary>
+            A convenience wrapper struct for dealing with URL-safe Base64 encoded globally unique identifiers (GUID),
+            making a shorter string value (22 vs 36 characters long).
+            </summary>
+            <remarks>
+            What is URL-safe Base64? That's just a Base64 string with well known special characters replaced (/, +)
+            or removed (==).
+            </remarks>
+        </member>
+        <member name="F:CSharpVitamins.ShortGuid.Empty">
+            <summary>
+            A read-only instance of the ShortGuid struct whose value is guaranteed to be all zeroes i.e. equivilent
+            to <see cref="F:System.Guid.Empty"/>.
+            </summary>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.#ctor(System.String)">
+            <summary>
+            Creates a new instance with the given URL-safe Base64 encoded string.
+            See also <seealso cref="M:CSharpVitamins.ShortGuid.TryParse(System.String,CSharpVitamins.ShortGuid@)"/> which will try to coerce the
+            the value from URL-safe Base64 or normal Guid string
+            </summary>
+            <param name="value">A ShortGuid encoded string e.g. URL-safe Base64.</param>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.#ctor(System.Guid)">
+            <summary>
+            Creates a new instance with the given <see cref="P:CSharpVitamins.ShortGuid.Guid"/>.
+            </summary>
+            <param name="guid">The Guid to encode.</param>
+        </member>
+        <member name="P:CSharpVitamins.ShortGuid.Guid">
+            <summary>
+            Gets the underlying <see cref="P:CSharpVitamins.ShortGuid.Guid"/> for the encoded ShortGuid.
+            </summary>
+        </member>
+        <member name="P:CSharpVitamins.ShortGuid.Value">
+            <summary>
+            Gets the encoded string value of the <see cref="P:CSharpVitamins.ShortGuid.Guid"/> i.e. a URL-safe Base64 string.
+            </summary>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.ToString">
+            <summary>
+            Returns the encoded URL-safe Base64 string.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance and a specified object represent the same type and value.
+            Compares for equality against other string, Guid and ShortGuid types.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.GetHashCode">
+            <summary>
+            Returns the hash code for the underlying <see cref="P:CSharpVitamins.ShortGuid.Guid"/>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.NewGuid">
+            <summary>
+            Initialises a new instance of the ShortGuid using <see cref="M:System.Guid.NewGuid"/>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.Encode(System.String)">
+            <summary>
+            Encodes the given value as an encoded ShortGuid string. The encoding is similar to
+            Base64, with some non-URL safe characters replaced, and padding removed.
+            </summary>
+            <param name="value">Any valid <see cref="P:CSharpVitamins.ShortGuid.Guid"/> string.</param>
+            <returns>A 22 character ShortGuid URL-safe Base64 string.</returns>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.Encode(System.Guid)">
+            <summary>
+            Encodes the given <see cref="P:CSharpVitamins.ShortGuid.Guid"/> as an encoded ShortGuid string. The encoding is similar to
+            Base64, with some non-URL safe characters replaced, and padding removed.
+            </summary>
+            <param name="guid">The <see cref="P:CSharpVitamins.ShortGuid.Guid"/> to encode.</param>
+            <returns>A 22 character ShortGuid URL-safe Base64 string.</returns>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.Decode(System.String)">
+            <summary>
+            Decodes the given value to a <see cref="P:CSharpVitamins.ShortGuid.Guid"/>.
+            See also <seealso cref="M:CSharpVitamins.ShortGuid.TryDecode(System.String,System.Guid@)"/> or <seealso cref="M:CSharpVitamins.ShortGuid.TryParse(System.String,System.Guid@)"/>.
+            </summary>
+            <param name="value">The ShortGuid encoded string to decode.</param>
+            <returns>A new <see cref="P:CSharpVitamins.ShortGuid.Guid"/> instance from the parsed string.</returns>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.TryDecode(System.String,System.Guid@)">
+            <summary>
+            Decodes the given value to a <see cref="P:CSharpVitamins.ShortGuid.Guid"/>.
+            </summary>
+            <param name="value">The ShortGuid encoded string to decode.</param>
+            <param name="guid">A new <see cref="P:CSharpVitamins.ShortGuid.Guid"/> instance from the parsed string.</param>
+            <returns>A boolean indicating if the decode was successful.</returns>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.op_Equality(CSharpVitamins.ShortGuid,CSharpVitamins.ShortGuid)">
+            <summary>
+            Determines if both ShortGuid instances have the same underlying <see cref="P:CSharpVitamins.ShortGuid.Guid"/> value.
+            </summary>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.op_Equality(CSharpVitamins.ShortGuid,System.Guid)">
+            <summary>
+            Determines if both instances have the same underlying <see cref="P:CSharpVitamins.ShortGuid.Guid"/> value.
+            </summary>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.op_Equality(System.Guid,CSharpVitamins.ShortGuid)">
+            <summary>
+            Determines if both instances have the same underlying <see cref="P:CSharpVitamins.ShortGuid.Guid"/> value.
+            </summary>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.op_Inequality(CSharpVitamins.ShortGuid,CSharpVitamins.ShortGuid)">
+            <summary>
+            Determines if both ShortGuid instances do not have the same underlying <see cref="P:CSharpVitamins.ShortGuid.Guid"/> value.
+            </summary>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.op_Inequality(CSharpVitamins.ShortGuid,System.Guid)">
+            <summary>
+            Determines if both instances do not have the same underlying <see cref="P:CSharpVitamins.ShortGuid.Guid"/> value.
+            </summary>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.op_Inequality(System.Guid,CSharpVitamins.ShortGuid)">
+            <summary>
+            Determines if both instances do not have the same underlying <see cref="P:CSharpVitamins.ShortGuid.Guid"/> value.
+            </summary>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.op_Implicit(CSharpVitamins.ShortGuid)~System.String">
+            <summary>
+            Implicitly converts the ShortGuid to its string equivalent.
+            </summary>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.op_Implicit(CSharpVitamins.ShortGuid)~System.Guid">
+            <summary>
+            Implicitly converts the ShortGuid to its <see cref="P:CSharpVitamins.ShortGuid.Guid"/> equivalent.
+            </summary>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.op_Implicit(System.String)~CSharpVitamins.ShortGuid">
+            <summary>
+            Implicitly converts the string to a ShortGuid.
+            </summary>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.op_Implicit(System.Guid)~CSharpVitamins.ShortGuid">
+            <summary>
+            Implicitly converts the <see cref="P:CSharpVitamins.ShortGuid.Guid"/> to a ShortGuid.
+            </summary>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.TryParse(System.String,CSharpVitamins.ShortGuid@)">
+            <summary>
+            Tries to parse the value as a ShortGuid or <see cref="P:CSharpVitamins.ShortGuid.Guid"/> string.
+            </summary>
+            <param name="value">The ShortGuid encoded string or string representation of a Guid.</param>
+            <param name="shortGuid">A new <see cref="T:CSharpVitamins.ShortGuid"/> instance from the parsed string.</param>
+            <returns>A boolean indicating if the parse was successful.</returns>
+        </member>
+        <member name="M:CSharpVitamins.ShortGuid.TryParse(System.String,System.Guid@)">
+            <summary>
+            Tries to parse the value as a ShortGuid or <see cref="P:CSharpVitamins.ShortGuid.Guid"/> string, and outputs the underlying <see cref="P:CSharpVitamins.ShortGuid.Guid"/> value.
+            </summary>
+            <param name="value">The ShortGuid encoded string or string representation of a Guid.</param>
+            <param name="guid">A new <see cref="P:CSharpVitamins.ShortGuid.Guid"/> instance from the parsed string.</param>
+            <returns>A boolean indicating if the parse was successful.</returns>
+        </member>
+    </members>
+</doc>

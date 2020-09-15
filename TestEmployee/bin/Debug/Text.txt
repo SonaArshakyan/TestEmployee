@@ -1,0 +1,16 @@
+$RECYCLE.BIN
+BACKUP
+DATA
+Documents and Settings
+Install
+Intel
+MSOCache
+PerfLogs
+Program Files
+Program Files (x86)
+ProgramData
+Recovery
+System Volume Information
+TEMPDB
+Users
+Windows

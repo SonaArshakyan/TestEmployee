@@ -1,0 +1,10 @@
+C:\Users\Administrator\source\repos\TestEmployee\TestEmployee\bin\Debug\TestEmployee.exe.config
+C:\Users\Administrator\source\repos\TestEmployee\TestEmployee\bin\Debug\TestEmployee.exe
+C:\Users\Administrator\source\repos\TestEmployee\TestEmployee\bin\Debug\TestEmployee.pdb
+C:\Users\Administrator\source\repos\TestEmployee\TestEmployee\obj\Debug\TestEmployee.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\TestEmployee\TestEmployee\obj\Debug\TestEmployee.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\TestEmployee\TestEmployee\obj\Debug\TestEmployee.exe
+C:\Users\Administrator\source\repos\TestEmployee\TestEmployee\obj\Debug\TestEmployee.pdb
+C:\Users\Administrator\source\repos\TestEmployee\TestEmployee\bin\Debug\CSharpVitamins.ShortGuid.dll
+C:\Users\Administrator\source\repos\TestEmployee\TestEmployee\bin\Debug\CSharpVitamins.ShortGuid.xml
+C:\Users\Administrator\source\repos\TestEmployee\TestEmployee\obj\Debug\TestEmployee.csproj.CopyComplete
